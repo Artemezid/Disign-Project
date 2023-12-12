@@ -33,6 +33,11 @@ button {
   margin: 0 auto;
   max-width: 1256px;
 }
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 h1 {
   color:#E3B873;
   font-family: Yeseva One;
@@ -69,7 +74,7 @@ a:hover  {
 header {
   background:#181818;
 }
-.header__container {
+.header__wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -121,6 +126,7 @@ main {
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
+  gap: 41px;
 }
 .text__h {
   flex-shrink: 0;
@@ -130,6 +136,7 @@ main {
   text-transform: uppercase;
 }
 .text__p {
+  margin-top: 19px;
   font-size: 22px;
   line-height: 163.68%;
 }
@@ -148,36 +155,70 @@ main {
 .projects {
   display: flex;
   flex-direction: row;
-  margin-top: 45px;
   gap: 50px;
-  align-items: flex-end;
-}
-.projects__h1 {
-  letter-spacing: -1.89px;
-}
-.projects__p1 {
-  font-size: 14px;
-  line-height: 190.96%;
-}
-.projects_p {
-  font-size: 13px;
 }
 .projects__in-cityes {
   width: 442px;
   height: 482px;
   display: flex;
   flex-direction: column;
+  margin-top: 55px;
+}
+.projects__h1 {
+  letter-spacing: -1.89px;
+}
+.projects__p1 {
+  margin-top: 34px;
+  font-size: 14px;
+  line-height: 190.96%;
+}
+.projects_p {
+  font-size: 13px;
+  line-height: 163.68%;
 }
 .in-cityes__list {
   display: none;
 }
 .projects__list {
+  margin-top: 42px;
   display: flex;
   flex-direction:row;
   flex-wrap: wrap;
+  gap: 34px;
 }
 .projects__list .list__item {
-  width: 213px;
+  width: 200px;
+}
+.list__item  {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.projects__svg {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+.projects__svg_circle {
+  width: 10px;
+  height: 10px;
+  background: #FFF;
+  opacity: 0.5;
+  border-radius: 100%;
+}
+.circle_color {
+  opacity: 1;
+}
+.projects__svg_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  background: none;
+  border: none;
+  box-shadow: none;
 }
 .projects__block {
   display: flex;
@@ -203,20 +244,15 @@ main {
   flex-direction: column;
   margin-top: 92px;
 }
-.projects__svg {
-  margin-top: 80px;
-  width: 205.683px;
-  height: 13.276px;
-  flex-shrink: 0;
-  cursor: pointer;
-}
 .section-1__svg {
+  margin-top: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap:8px;
 }
 .control__h1 {
+  text-align: center;
   color: #FFF;
 }
 .svg__img {
@@ -225,12 +261,6 @@ main {
   flex-shrink: 0;
   border-radius: 30px;
   background: #E3B873;
-}
-
-.content_display {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 .section-2 p,
 .section-2 h1,
@@ -342,35 +372,28 @@ main {
       opacity: 1;
       color: #FFF;
     }
-.repair {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.types-of-repair {
   margin-top: 148px;
   margin-bottom: 13px;
 }
-.repair__info {
+.types-of-repair__svg {
+  margin-top: 13px;
+  width: 114px;
+  height: 28px;
+  flex-shrink: 0;
+}
+.types-of-repair__info {
   display: flex;
   flex-direction: row;
   gap: 30px;
   margin-top: 31px;
 }
-.repair__svg {
-  width: 114px;
-  height: 28px;
-  flex-shrink: 0;
-}
-.repair__info_1 {
+.types-of-repair__info_1 {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.info__list {
-  margin-top: -127px;
-  width: 330px;
-  background-color: #FFF;
-}
-.repair__img {
+.types-of-repair__img {
   width: 392px;
   height: 421px;
   flex-shrink: 0;
@@ -386,19 +409,34 @@ main {
 .img_3 {
   background-image: url(images/png/remont3.png);
 }
-.repair h2 {
- margin-left: 31px;
- text-transform: none;
+.info__size {
+  margin-top: -127px;
+  width: 330px;
+  display: flex;
+  flex-direction: column;
 }
-.repair ul {
+.info__list {
+  padding-top: 25px;
+  height:286px;
+  background-color: #FFF;
+  box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.03);
+}
+.types-of-repair__h2 {
+  margin-left: 31px;
+  text-transform: none;
+}
+.types-of-repair ul {
   padding-left: 51px;
+  list-style:disc;
 }
-.repair li {
+.types-of-repair li {
   color: #959595;
   font-size: 13px;
   line-height: 204.6%;
 }
-.repair__button {
+.types-of-repair__button {
+  position: relative;
+  margin-top: -28px;
   width: 228px;
   height: 54px;
   color: #FFF;
@@ -413,14 +451,14 @@ main {
   background-position: left;
   background-size: auto;
 }
-.measure-con {
+.measure-wrapper {
   margin-top: 124px;
   display: flex;
   flex-direction: row;
   justify-content: space-between; 
 }
 .measure__stages {
-  margin-left: 160px;
+  margin-left: 130px;
   display: flex;
   flex-direction: column;
   gap: 90px;
@@ -464,6 +502,17 @@ main {
   box-shadow: 0px 30px 30px 0px rgba(0, 0, 0, 0.05);
   color: #FFF;
 }
+.form__list_p {
+  color: #fff !important;
+  font-size: 18px;
+  align-self: center;
+}
+.form__p_display {
+  margin-top: 39px;
+  display: flex;
+  flex-direction: column;
+  gap: 49px;
+}
 .measure__request .form__p {
   color: rgba(255, 255, 255, 0.50);
 }
@@ -482,11 +531,6 @@ main {
 .measure .form__img {
   width: 408px;
 }
-.form__list_p {
-  color: #fff !important;
-  font-size: 18px;
-  align-self: center;
-}
 .form__list .checkbox {
   margin-top: 16px;
   align-self: flex-start;
@@ -503,7 +547,9 @@ main {
 .request__svg {
   margin-top: 38px;
   display: flex;
+  flex-direction: row;
   gap: 25px;
+  align-items: center;
 }
 .request__svg p {
   color: #E3B873;
@@ -514,7 +560,7 @@ main {
   font-weight: 400;
   line-height: 143.22%;
 }
-.types-of-repair {
+.repair {
   margin-top: 242px;
   height: 864px;
   flex-shrink: 0;
@@ -523,37 +569,36 @@ main {
   background-size: cover;
   background-position: center;
 }
-.types-of-repair__info {
+.repair__info {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.types-of-repair__info h1 {
-  margin-top: 137px;
+.repair__info h1 {
+  margin-top: 137.5px;
   color: #E3B873;
   font-size: 27px;
   text-transform: uppercase;
 }
-.types-of-repair__info ul {
+.repair__info ul {
+  margin-top: 47px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
   list-style: none;
+  gap: 15px;
 }
-.types-of-repair__info a {
+.repair__info a {
   color: #FFF;
-  font-family: Nunito Sans;
   font-size: 20px;
   font-style: normal;
-  font-weight: 400;
   line-height: 190.96%;
   text-decoration: none;
 }
-.types-of-repair__info a:hover {
+.repair__info a:hover {
   color: #E3B873;
   text-decoration: underline;
 }
-.types-of-repair__img {
+.repair__img {
   display: flex;
   flex-direction: row;
   gap:43px;
@@ -589,6 +634,9 @@ main {
   margin-top: 110.5px;
   text-transform: uppercase;
 }
+.clients__svg {
+  margin-top: 13.22px;
+}
 .clients__p {
   margin-top: 24px;
 }
@@ -602,7 +650,7 @@ main {
 .clients__review {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 24px 20px;
   width: 376px;
   height: 428px;
   flex-shrink: 0;
@@ -612,7 +660,7 @@ main {
 .review__face {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  align-items: center;
   gap: 20px;
 }
 .clients__image {
@@ -638,6 +686,12 @@ main {
 .img-3 {
   background-image: url(images/png/man2.png);
 }
+.review__p {
+  margin-top: 20px;
+  color: #959595;
+  font-size: 13px;
+  line-height: 180%;
+}
 .review__button {
   width: 293.753px;
   height: 54.035px;
@@ -659,6 +713,8 @@ main {
   height: 953.898px;
   background: url(images/png/section3.png), linear-gradient(180deg, #181818 3.47%, #181818 100%);
   background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center;
 }
 .section-3__form {
   margin-top: -222.66px;
@@ -671,6 +727,7 @@ main {
   flex-direction: column;
   align-items: center;
   padding: 34px;
+  justify-content: space-between;
 }
 .form__section {
   width: 517px;
@@ -707,11 +764,7 @@ main {
   font-weight: 400;
   line-height: 163.68%;
 }
-.section-3__form label {
-  margin-top: 48px;
-}
 .section-3 .form__button {
-  margin-top: 50px;
   width: 200px;
   height: 51px;
   flex-shrink: 0;
@@ -732,6 +785,9 @@ main {
   text-align: center;
   text-transform: uppercase;
 }
+.section-3__svg {
+  margin-top: 26px;
+}
 .section-3__map {
   width: 925px;
   height: 465px;
@@ -743,19 +799,11 @@ main {
 footer {
   background: #181818;
 }
-.footer__container {
+.footer__wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 133px;
-}
-
-@media screen and (min-width:1440px) {
-  .section-2,
-  .section-3,
-  footer {
-    display: none;
-  }
 }
 @media  screen and (max-width:375px) {
   .container{
@@ -781,7 +829,7 @@ footer {
     background-color: #181818;
   }
   .section-1__info {
-    height: 475px;
+    height: 476px;
   }
   .info__content {
     margin: 0;
@@ -814,10 +862,14 @@ footer {
     gap: 0px;
   }
   .projects__in-cityes {
+    margin-top: 0px;
     align-items: center;
     width: 340px;
     height: auto;
     gap: 36px;
+  }
+  .projects__p1 {
+    margin-top: 22px;
   }
   .in-cityes__text {
     display: flex;
@@ -826,6 +878,7 @@ footer {
     text-align: center;
   }
   .in-cityes__list {
+    margin-top: 36px;
     width: 340px;
     height: 241.355px;
     flex-shrink: 0;
@@ -861,7 +914,6 @@ footer {
     margin-top: 58px;
   }
   .section-2__content {
-    height: 900px;
     background-color: #181818;
   }
   .video {
@@ -879,20 +931,27 @@ footer {
     width: 37px;
     height: 37px;
   }
+  .section-2__img {
+    margin-top: 28px;
+  }
   .section-2__text {
+    margin-top: 21.5px;
     width: 340px;
+    height: 107px;
     color: #FFF !important;
     font-size: 11px;
     line-height: 169.8%;
   }
   .registration {
-    height: auto;
-    margin-top: 50px;
+    height: 330px;
+    margin-top: 0px;
   }
   .registration form {
-    height: auto;
+    padding: 0px;
+    margin: 0px;
+    height:300px;
     flex-direction: column;
-    gap: 50px;
+    gap:63px;
   }
   .registration .form__p {
     color: rgba(255, 255, 255, 0.50);
@@ -900,7 +959,10 @@ footer {
     line-height: 163.68%;
   }
   .registration .checkbox {
+    position: relative;
+    margin-top: -100px;
     color: #FFF;
+    margin-left: -50px;
   }
   .registration .form__input {
     background-color: #181818;
@@ -913,7 +975,7 @@ footer {
     line-height: 138.72%;
   }
   .registration .form__img {
-    width: 339.993px;
+    width: 340px;
     height: 1px;
     flex-shrink: 0;
     border: 1px solid rgba(54, 54, 54, 0.30);
@@ -924,45 +986,44 @@ footer {
     height: 51px;
     flex-shrink: 0;
     position: absolute;
-    top: 2295px;
+    top: 2180px;
   }
-  .registration .checkbox {
-    position: relative;
-    margin-left: -50px;
+  .types-of-repair {
+    margin-top: 83px;
   }
-  .repair {
-    margin-top: 59px;
-  }
-  .repair__info {
+  .types-of-repair__info {
     flex-direction: column;
     gap: 79px;
   }
-  .repair__info_1 {
+  .types-of-repair__info_1 {
     align-items: flex-start;
   }
-  .repair__img {
+  .types-of-repair__img {
     width: 340px;
     height:365px;
   }
-  .repair__h2 {
+  .types-of-repair__h2 {
     font-size: 15px;
   }
-  .repair li {
+  .types-of-repair li {
     line-height: 169.6%;
+  }
+  .info__size {
+    margin-top: -130px;
   }
   .info__list {
     width: 270px;
     height: 241px;
-    margin-top: -142px;
   }
-  .repair__button {
+  .types-of-repair__button {
+    margin-top: -20px;
     width: 190.426px;
     height: 40px;
     flex-shrink: 0;
     font-size: 15px;
   }
   .measure,
-  .types-of-repair,
+  .repair,
   .clients,
   footer  {
     display: none;
@@ -970,7 +1031,7 @@ footer {
   .section-2__h1_phone {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    text-align: center;
     margin-top: 75px;
     color: #E3B873 !important;
     font-family: Yeseva One;
@@ -1007,17 +1068,21 @@ footer {
     background-color: #181818;
   }
   .form__section {
-    margin-top: 30px;
+    margin-top: 52px;
     flex-direction: column;
     align-items: center;
+    gap: 63px;
   }
   .long,
   .section-3__form .form__img {
     width: 340px;
   }
+  .form__p_margin {
+    margin-top: 63px;
+  }
   .section-3__form label {
     align-self: start;
-    margin-top: 15px;
+    margin-top: 22px;
   }
   .section-3 .form__button {
     margin-top: 67px;
@@ -1036,6 +1101,357 @@ footer {
   .section-3__map {
     width: 340px;
     height: 255px;
+    flex-shrink: 0;
+  }
+}
+@media screen and (min-width: 376px) and (max-width:768px){
+
+  .container{
+    max-width: 700px;
+  }
+  button {
+    width: 300px;
+    height: 70px;
+    font-size: 18px;
+  }
+  h1 {
+    font-size: 22px;
+  }
+  h2 {
+    font-size: 14px;
+  }
+  .header__container {
+    height: 65px;
+  }
+  .header__nav,
+  .contacts__button {
+    display: none;
+  }
+  .text_size {
+    font-size: 14px;
+  }
+  .section-1 {
+    background-color: #181818;
+  }
+  .section-1__info {
+    height:570px;
+  }
+  .info__content {
+    margin: 0;
+    padding-top: 100px;
+    width: 700px;
+    align-items: center;
+  }
+  .text__h,
+  .text__p {
+    text-align: center;
+  }
+  .text__p {
+    margin-top: 30px;
+  }
+  .content__buttons {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+  }
+  .buttons__button-2 {
+    margin-left: 0;
+  }
+  .section-1__projects {
+    margin-top: 0;
+    height: auto;
+  }
+  .projects {
+    margin-top: 50px;
+    padding:0px;
+    gap: 0px;
+  }
+  .projects__in-cityes {
+    margin-top: 0px;
+    align-items: center;
+    width: 700px;
+    height: auto;
+    gap: 50px;
+  }
+  .in-cityes__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .projects__h1 {
+    font-size: 27px;
+  }
+  .projects__p1 {
+    font-size: 18px;
+    margin-top: 22px;
+  }
+  .in-cityes__list {
+    margin-top: 36px;
+    padding: 0 20px;
+    width: 700px;
+    height: 450px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url(images/png/kabinet.png);
+    background-size: cover;
+    background-position: center;
+  }
+  .projects__button {
+    width: 72px;
+    height: 72px;
+    flex-shrink: 0;
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    box-shadow: none;
+  }
+  .projects__button_svg {
+    width: 72px;
+    height: 72px;
+  }
+  .projects__list {
+    width: 700px;
+    justify-content: space-between;
+  }
+  .projects__list .list__item {
+    width: 100px;
+  }
+  .projects_h2 {
+    font-size: 18px;
+  }
+  .projects_p {
+    font-size: 14px;
+  }
+  .projects__svg {
+    display: none;
+  }
+  .projects__block {
+    display: none;
+  }
+  .projects__control {
+    margin-top: 100px;
+  }
+  .section-2__content {
+    background-color: #181818;
+  }
+  .video {
+    width: 700px;
+    height: 450px;
+    flex-shrink: 0;
+    margin-top: 70px;
+  }
+  .video__button {
+    width: 72px;
+    height: 72px;
+    flex-shrink: 0;
+  }
+  .video__button_img {
+    width: 72px;
+    height: 72px;
+  }
+  .section-2__img {
+    margin-top: 50px;
+  }
+  .section-2__text {
+    margin-top: 50px;
+    width: 700px;
+    height: 107px;
+    color: #FFF !important;
+    font-size: 18px;
+    line-height: 169.8%;
+  }
+  .registration {
+    height: 250px;
+    width: 700px;
+    margin-top: 70px;
+  }
+  .registration form {
+    padding: 0px;
+    margin: 0px;
+    gap: 50px;
+  }
+  .form__input[type=text] {
+    width: 200px;
+  }
+  .registration .form__p {
+    color: rgba(255, 255, 255, 0.50);
+    font-size: 18px;
+    line-height: 163.68%;
+  }
+  .registration .checkbox {
+    color: #FFF;
+    margin-bottom: 50px;
+  }
+  .registration .form__input {
+    background-color: #181818;
+  }
+  .registration form ::-webkit-input-placeholder,
+  .registration input:focus {
+    color: #FFF;
+    font-family: Nunito Sans;
+    font-size: 18px;
+    line-height: 138.72%;
+  }
+  .registration .form__img {
+    width: 200px;
+    height: 1px;
+    flex-shrink: 0;
+    border: 1px solid rgba(54, 54, 54, 0.30);
+    background: #FFF;
+  }
+  .registration .form__button {
+    width: 200px;
+    height: 51px;
+    flex-shrink: 0;
+  }
+  .text {
+    font-size: 18px;
+  }
+  .types-of-repair {
+    margin-top: 120px;
+  }
+  .types-of-repair__h1 {
+    font-size: 25px;
+  }
+  .types-of-repair__info {
+    flex-direction: column;
+    gap: 79px;
+  }
+  .types-of-repair__info_1 {
+    align-items: center;
+  }
+  .types-of-repair__img {
+    width: 600px;
+    height:500px;
+  }
+  .types-of-repair__h2 {
+    font-size: 18px;
+  }
+  .types-of-repair li {
+    line-height: 169.6%;
+    font-size: 18px;
+  }
+  .info__size {
+    margin-top: -150px;
+    align-items: center;
+  }
+  .info__list {
+    width: 340px;
+    height: 320px;
+  }
+  .types-of-repair__button {
+    margin-top: -30px;
+    width: 300px;
+    height: 60px;
+    flex-shrink: 0;
+    font-size: 18px;
+  }
+  .measure,
+  .repair,
+  .clients,
+  footer  {
+    display: none;
+  }
+  .section-2__h1_phone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    color: #E3B873 !important;
+    font-family: Yeseva One;
+    font-size: 27px;
+    line-height: 138.6%;
+    text-transform: uppercase;
+    margin-bottom: 270px;
+  }
+  .section-3__repair-list {
+    margin-top: -225px;
+    width: 700px;
+    height: 450px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url(images/png/goodrepair.png);
+    background-size: cover;
+    background-position: center;
+  }
+  .section-3 {
+    height: auto;
+    background:#181818;
+  }
+  .section-3__form {
+    width: 700px;
+    height: auto;
+    margin-top: 52px;
+    padding: 0;
+    background:#181818;
+  }
+  .section-3 form input  {
+    background-color: #181818;
+  }
+  .form__section {
+    width: 700px;
+    margin-top: 52px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .section-3 .form__input[type=text] {
+    width: 300px;
+  } 
+  .long {
+    width: 700px;
+  }
+  .section-3__form .form__img {
+    width: 300px;
+  }
+  .section-3 .form__p {
+    font-size: 18px;
+  }
+  .section-3 form ::-webkit-input-placeholder,
+  .section-3 input:focus {
+    font-size: 18px;
+  }
+  .form__p_margin {
+    margin-top: 63px;
+  }
+  .section-3__form label {
+    align-self: start;
+    margin-top: 22px;
+  }
+  .section-3 .form__button {
+    margin-top: 67px;
+    width: 250px;
+    height: 70px;
+    flex-shrink: 0;
+    font-size: 18px;
+    align-self: flex-end;
+  }
+  .section-3__block {
+    margin-top: 80px;
+    flex-direction: column-reverse;
+    margin-bottom: 100px;
+  }
+  .section-3__block_h1 {
+    margin-top: 70px;
+    font-size: 25px;
+  }
+  .section-3__svg {
+    width: 130px;
+    height: 50px;
+  }
+  .section-3__map {
+    width: 700px;
+    height: 570px;
     flex-shrink: 0;
   }
 }
